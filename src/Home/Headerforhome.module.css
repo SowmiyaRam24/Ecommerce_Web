@@ -1,0 +1,41 @@
+.headerabout {
+    color:white;
+    background-color:rgb(117, 116, 116);
+    margin:0px 0px 0px 0px;
+    padding:15px 50px 10px 300px;
+    font-size:30px;
+    justify-content: center;
+}
+
+.headerabout h1{
+font-size: 90px;
+justify-content: center;
+font-family: 'Times New Roman', Times, serif;
+padding-left: 10%;
+}
+.headerabout h5{
+    font-size:25px;
+    border:2px solid cadetblue;
+    margin:60px 300px auto 100px;
+    padding:15px 15px 15px 15px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.abou{
+
+
+    margin:10px   0px 0px 0px;
+    padding:15px 50px 20px 525px;
+    font-weight :bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+
+}
+.log {
+    border:1px solid white;
+    border-radius: 50px;
+    margin:50px 410px  30px 210px;
+    
+
+}

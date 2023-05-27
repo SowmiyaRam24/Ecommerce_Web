@@ -1,6 +1,7 @@
 import './App.css';
 // import Store from './Components/Products/StorePage';
-import About from './About/About'
+// import About from './About/About';
+import Home from './Home/Home';
 
 function App() {
 
@@ -9,8 +10,8 @@ function App() {
 
   return (<>
     {/* <Store></Store> */}
-    <About></About>
-    
+    {/* <About></About> */}
+    <Home></Home>
   </>)
 }
 
