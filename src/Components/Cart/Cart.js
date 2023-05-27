@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-function Cart() {
+
+function Cart(props) {
   return (
-    <>
-    <Button>Cart</Button>
-    </>
+    <Button onClick={props.onShow}>cart</Button>
+    
   )
 }
 

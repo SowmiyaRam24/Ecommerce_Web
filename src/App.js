@@ -1,13 +1,14 @@
-
 import './App.css';
-import ProductToScreen from './Components/Products/ProductToScreen';
-import Cart from './Components/Cart/Cart';
-
+import Store from './Components/Products/StorePage';
+// import Product from './Components/Cart/carts';
 function App() {
-  return (<>
-    <Cart></Cart>
-  <ProductToScreen></ProductToScreen>
+
   
+
+
+  return (<>
+    <Store></Store>
+    {/* <Product></Product> */}
   </>)
 }
 
