@@ -1,13 +1,17 @@
 import React from 'react';
 import classes from './About.module.css';
 import Brand from './Band Members -2.png';
+import Navbar1 from '../Navbar/Navbar';
 
 function About() {
   return (
     <div className={classes.header}>
-        {/* <Navbar1/> */}
-    <div className={classes.headerforabout}>
+        <Navbar1/>
+    <div style={{paddingTop:'3px'}}>
+    <div  className={classes.headerforabout}>
      <h1>The Generics</h1> 
+    </div>
+
     </div>
     <div  >
         <h5 className={classes.about}>ABOUT</h5>
