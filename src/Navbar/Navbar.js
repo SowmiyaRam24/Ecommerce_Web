@@ -4,6 +4,7 @@ import { Navbar,Nav} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 // import AuthContext from "../../Auth/auth-context";
 // import { useContext } from "react";
+import CartButton from "../Components/Cart/Cart";
 
 const Navbar1 = (props) => {
 //   const authCtx = useContext(AuthContext);
@@ -15,7 +16,9 @@ const Navbar1 = (props) => {
   
   return (
     <div>
-    <Navbar bg="dark" variant="dark">
+    <header>
+
+    <Navbar bg="dark" variant="dark" >
       <Container>
         <Nav className="me-auto">
           <NavLink to="/" className="nav-link">
@@ -32,8 +35,9 @@ const Navbar1 = (props) => {
           </NavLink> */}
         </Nav>
       
-       {/* <CartButton onButtonpass={props.onOpenButton} />
-       <Nav>
+       <CartButton onButtonpass={props.onShow} />
+           
+       {/* <Nav>
        {isLoggedIn && (
             <Button onClick={logoutHandler}variant="info"
             style={{ border: "1px solid skyblue",
@@ -47,6 +51,7 @@ const Navbar1 = (props) => {
        </Container>
       </Navbar>
      
+    </header>
     </div>
 	
    

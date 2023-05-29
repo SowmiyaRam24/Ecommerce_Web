@@ -1,10 +1,11 @@
 import React,{useState}from 'react';
-import Cart from '../Cart/Cart';
+// import Cart from '../Cart/Cart';
 import ProductToScreen from './ProductToScreen';
 import CartItems from '../Cart/CartItems';
 import CartProvider from '../../Context/ContextProvider';
 import HeaderExpense from '../Cart/HeaderExpense';
 import Navbar1 from '../../Navbar/Navbar';
+import CartButton from '../Cart/Cart';
 
 function Store() {
 const [CartIsShown,setCartIsShown]=useState(false)
@@ -19,10 +20,13 @@ const hideCarthandeler=()=>{
 
   return (
     <CartProvider>
-      <Navbar1></Navbar1>
+
+      {!CartIsShown&&<Navbar1 onShow={showCartHandler}/>}
       {CartIsShown&&<CartItems onHide={hideCarthandeler}/>}
-      {!CartIsShown&&<Cart onShow={showCartHandler}/>}
+      <div style={{paddingTop:'3px'}}> 
       <HeaderExpense></HeaderExpense>
+      </div>
+
       <ProductToScreen></ProductToScreen>
     </CartProvider>
     
