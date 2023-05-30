@@ -5,6 +5,7 @@ import {createBrowserRouter,RouterProvider,createRoutesFromElements,Route } from
 import Store from './Components/Products/StorePage';
 import About from './About/About';
 import Home from './Home/Home';
+import Contact from './Components/Contact us/Contact';
 
 // const router=createBrowserRouter([
 //   {path:'/',element:<Home/>},
@@ -16,6 +17,7 @@ const routefinitions=createRoutesFromElements(
     <Route path="/" element={<Home/>}/>
     <Route path="/store" element={<Store/>}/>
     <Route path="/about"  element={<About/>}/>
+    <Route path="/contact" element={<Contact/>}/>
   </Route>
 );
 const router=createBrowserRouter(routefinitions)

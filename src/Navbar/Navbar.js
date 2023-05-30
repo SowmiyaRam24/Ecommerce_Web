@@ -30,9 +30,9 @@ const Navbar1 = (props) => {
           <NavLink to="/about" className="nav-link">
             ABOUT
           </NavLink>
-          {/* <NavLink to="/contact" className="nav-link">
+           <NavLink to="/contact" className="nav-link">
             CONTACT US
-          </NavLink> */}
+          </NavLink> 
         </Nav>
       
        <CartButton onButtonpass={props.onShow} />
