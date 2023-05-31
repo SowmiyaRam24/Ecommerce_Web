@@ -19,15 +19,14 @@ const Contact = () => {
       phone,
     };
     const response = await fetch(
-      "https://ecommerce-app-26adc-default-rtdb.firebaseio.com/contact.json",
+      "https://new-cbac3ad-default-rtdb.firebaseio.com/contact.json",
       {
         method: "POST",
         body: JSON.stringify(contact),
         headers: {
           "Content-Type": "application/json",
         },
-      }
-    );
+      } );
     const data = await response.json();
     console.log(data);
     setName("");

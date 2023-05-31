@@ -21,7 +21,7 @@ const Navbar1 = (props) => {
     <Navbar bg="dark" variant="dark" >
       <Container>
         <Nav className="me-auto">
-          <NavLink to="/" className="nav-link">
+          <NavLink to="/home" className="nav-link">
             HOME
           </NavLink>
           <NavLink to="/store" className="nav-link">
