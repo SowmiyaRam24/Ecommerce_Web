@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import { Navbar,Nav} from "react-bootstrap";
 // import CartButton from "./navbarcartbutton";
-import {NavLink} from "react-router-dom";
+import {NavLink,useLocation} from "react-router-dom";
 // import AuthContext from "../../Auth/auth-context";
 // import { useContext } from "react";
 import CartButton from "../Components/Cart/Cart";
@@ -13,6 +13,7 @@ const Navbar1 = (props) => {
 //   const isLoggedIn = authCtx.isLoggedIn;
 //   const logoutHandler = () =>{authCtx.logout();
 //     history.replace("/");}
+  const location = useLocation();
   
   return (
     <div>
@@ -21,7 +22,7 @@ const Navbar1 = (props) => {
     <Navbar bg="dark" variant="dark" >
       <Container>
         <Nav className="me-auto">
-          <NavLink to="/home" className="nav-link">
+          <NavLink to="/" className="nav-link">
             HOME
           </NavLink>
           <NavLink to="/store" className="nav-link">
@@ -33,9 +34,10 @@ const Navbar1 = (props) => {
            <NavLink to="/contact" className="nav-link">
             CONTACT US
           </NavLink> 
+
         </Nav>
       
-       <CartButton onButtonpass={props.onShow} />
+       {location.pathname === "/store" && <CartButton onButtonpass={props.onShow} />}
            
        {/* <Nav>
        {isLoggedIn && (
