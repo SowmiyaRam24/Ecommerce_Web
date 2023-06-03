@@ -1,18 +1,18 @@
 import Container from "react-bootstrap/Container";
 import { Navbar,Nav} from "react-bootstrap";
-// import CartButton from "./navbarcartbutton";
-import {NavLink,useLocation} from "react-router-dom";
-// import AuthContext from "../../Auth/auth-context";
-// import { useContext } from "react";
+import {NavLink,useLocation,useNavigate} from "react-router-dom";
+import AuthContext from "../Authendication/AuthenContext";
+import Button from "react-bootstrap/Button";
+
 import CartButton from "../Components/Cart/Cart";
+import { useContext } from "react";
 
 const Navbar1 = (props) => {
-//   const authCtx = useContext(AuthContext);
-
-// const history=useHistory()
-//   const isLoggedIn = authCtx.isLoggedIn;
-//   const logoutHandler = () =>{authCtx.logout();
-//     history.replace("/");}
+  const authCtx = useContext(AuthContext);
+  const navigate=useNavigate();
+  const isLoggedIn = authCtx.isLoggedIn;
+  const logoutHandler = () =>{authCtx.logout()
+    navigate("/")}
   const location = useLocation();
   
   return (
@@ -22,24 +22,26 @@ const Navbar1 = (props) => {
     <Navbar bg="dark" variant="dark" >
       <Container>
         <Nav className="me-auto">
-          <NavLink to="/" className="nav-link">
+         {!isLoggedIn&& <NavLink to="/" className="nav-link">LOGIN</NavLink>}
+          {isLoggedIn&&<NavLink to="/home" className="nav-link">
             HOME
-          </NavLink>
-          <NavLink to="/store" className="nav-link">
+          </NavLink>}
+          {isLoggedIn&&<NavLink to="/store" className="nav-link">
             STORE
-          </NavLink>
-          <NavLink to="/about" className="nav-link">
+          </NavLink>}
+          {isLoggedIn&&<NavLink to="/about" className="nav-link">
             ABOUT
-          </NavLink>
-           <NavLink to="/contact" className="nav-link">
+          </NavLink>}
+          {isLoggedIn&& <NavLink to="/contact" className="nav-link">
             CONTACT US
-          </NavLink> 
+          </NavLink> }
+          {/* {isLoggedIn&& <NavLink className="nav-link"> LOGOUT</NavLink>} */}
 
         </Nav>
       
        {location.pathname === "/store" && <CartButton onButtonpass={props.onShow} />}
            
-       {/* <Nav>
+       <Nav>
        {isLoggedIn && (
             <Button onClick={logoutHandler}variant="info"
             style={{ border: "1px solid skyblue",
@@ -49,7 +51,7 @@ const Navbar1 = (props) => {
             </Button>
             
           )}
-          </Nav> */}
+          </Nav>
        </Container>
       </Navbar>
      

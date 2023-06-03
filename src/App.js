@@ -40,12 +40,13 @@ function App(){
 
         <Routes>
            
-          <Route path="/Auth" element={<AuthForm/>}/>
+          <Route path="/" exact  element={<AuthForm/>}/>
           <Route path="/home"   element={<Home/>}/>
           <Route path="/store"     element={<Store/>}/>
           <Route path="/about"   element={<About/>}/>
           <Route path ="/contact" element={<Contact/>}/>
           <Route path="/product/:id" element={<ProductPage/>}/>
+          
 
          </Routes>
       </Layout> 

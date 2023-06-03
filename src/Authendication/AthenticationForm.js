@@ -1,12 +1,16 @@
-import { useState, useRef } from 'react';
+import { useState, useRef,useContext } from 'react';
 import classes from './AuthenticationFrom.module.css';
+import { useNavigate } from 'react-router-dom';
+import AuthContext from './AuthenContext';
 import Navbar1 from '../Navbar/Navbar';
 
 const AuthForm = () => {
-  const emailRef=useRef(' ');
-  const passwordRef=useRef(' ');
+  const emailRef=useRef();
+  const passwordRef=useRef();
+  const authCtx=useContext(AuthContext);
   const [isLogin, setIsLogin] = useState(true);
-  const [isLoading,setIsLoading]=useState(false)
+  const [isLoading,setIsLoading]=useState(false);
+  const navigate=useNavigate();
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
@@ -31,24 +35,24 @@ const AuthForm = () => {
         headers:{
             'Content-Type':'application/json'
         },
-    }
-    ).then(res=>{
+    }).then((res)=>{
       setIsLoading(false)
         if(res.ok){
-            return res.json();
+          return res.json();
         }else{
            return res.json().then(data=>{
                 let errorMessage='Authentication failed!';
-                // if(data&&data.error&&data.error.message){
-                //     errorMessage=data.error.message;
-                // }
+                if(data&&data.error&&data.error.message){
+                    errorMessage=data.error.message;
+                }
               
                 throw new Error(errorMessage);
             });
         }
         
     }).then(data=>{
-      console.log(data)
+      authCtx.login(data.idToken);
+      navigate("/home")
     })
     .catch(err =>{
       alert(err.message);
