@@ -7,7 +7,7 @@ function Home() {
     return (
       <div>
          <Navbar1/>
-         <div style={{paddingTop:'3px'}}>
+         <div style={{paddingTop:'60px'}}>
           < HeaderForHome/> 
          </div>
          <HomeBody/>

@@ -5,6 +5,7 @@ import CartItems from '../Cart/CartItems';
 import CartProvider from '../../Context/ContextProvider';
 import HeaderExpense from '../Cart/HeaderExpense';
 import Navbar1 from '../../Navbar/Navbar';
+import FooterStore from '../../Home/FooterStore';
 import CartButton from '../Cart/Cart';
 
 function Store() {
@@ -23,11 +24,12 @@ const hideCarthandeler=()=>{
 
       {!CartIsShown&&<Navbar1 onShow={showCartHandler}/>}
       {CartIsShown&&<CartItems onHide={hideCarthandeler}/>}
-      <div style={{paddingTop:'3px'}}> 
+      <div style={{paddingTop:'60px'}}> 
       <HeaderExpense></HeaderExpense>
       </div>
 
       <ProductToScreen></ProductToScreen>
+      <FooterStore/>
     </CartProvider>
     
         

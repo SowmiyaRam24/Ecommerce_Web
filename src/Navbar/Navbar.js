@@ -17,12 +17,10 @@ const Navbar1 = (props) => {
   
   return (
     <div>
-    <header>
-
-    <Navbar bg="dark" variant="dark" >
+   <Navbar bg="dark" variant="dark" fixed="top" >
       <Container>
         <Nav className="me-auto">
-         {!isLoggedIn&& <NavLink to="/" className="nav-link">LOGIN</NavLink>}
+         {!isLoggedIn&& <NavLink to="/login" className="nav-link">LOGIN</NavLink>}
           {isLoggedIn&&<NavLink to="/home" className="nav-link">
             HOME
           </NavLink>}
@@ -35,7 +33,7 @@ const Navbar1 = (props) => {
           {isLoggedIn&& <NavLink to="/contact" className="nav-link">
             CONTACT US
           </NavLink> }
-          {/* {isLoggedIn&& <NavLink className="nav-link"> LOGOUT</NavLink>} */}
+          
 
         </Nav>
       
@@ -55,7 +53,7 @@ const Navbar1 = (props) => {
        </Container>
       </Navbar>
      
-    </header>
+  
     </div>
 	
    

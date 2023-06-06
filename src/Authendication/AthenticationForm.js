@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from './AuthenContext';
 import Navbar1 from '../Navbar/Navbar';
 
+
 const AuthForm = () => {
   const emailRef=useRef();
   const passwordRef=useRef();
@@ -16,8 +17,8 @@ const AuthForm = () => {
   };
   const  submitHandler =(e)=>{
     e.preventDefault();
-   const enteredEmail= emailRef.current.value;
-   const enteredPassword=passwordRef.current.value;
+   let enteredEmail= emailRef.current.value;
+   let enteredPassword=passwordRef.current.value;
    setIsLoading(true)
    let url;
    if(isLogin){
@@ -52,7 +53,9 @@ const AuthForm = () => {
         
     }).then(data=>{
       authCtx.login(data.idToken);
-      navigate("/home")
+      navigate("/home");
+      enteredEmail='';
+      enteredPassword='';
     })
     .catch(err =>{
       alert(err.message);
@@ -62,7 +65,8 @@ const AuthForm = () => {
   return (
     <>
     <Navbar1/>
-    <section className={classes.auth}>
+    <div style={{paddingTop:'60px'}}>
+      <section className={classes.auth}>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form onSubmit={submitHandler} >
         <div className={classes.control}>
@@ -95,6 +99,7 @@ const AuthForm = () => {
         </div>
       </form>
     </section>
+    </div>
     </>
     
   );

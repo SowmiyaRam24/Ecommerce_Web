@@ -7,6 +7,7 @@ import CartHeader from "./cartheader";
 import CartContext from '../../Context/Context';
 
 function CartItems(props) {
+  const [purches,purchaseing]=useState(" ");
   const cartctx = useContext(CartContext);
   const [price, setPrice] = useState(0);
   const priceHandler = () => {
@@ -22,6 +23,10 @@ function CartItems(props) {
     cartctx.removeItem(arr);
   };
   const IncreaseAndDecrease = cartctx.incAndDecFun;
+  const purchas=()=>{
+    purchaseing(
+    alert('Oder is placed'))
+  }
   return (
     <Modal onClose={props.onHide}>
          {/* <button onClick={props.onHide}>x</button>  */}
@@ -91,7 +96,7 @@ function CartItems(props) {
             
           </span>
         </div>
-        <Button variant="info" style={{ margin: " 2rem auto auto 17rem " }}>
+        <Button variant="info" style={{ margin: " 2rem auto auto 17rem " }} onClick={purchas} >
          PURCHASE
         </Button>
         <Button variant="danger"
@@ -104,7 +109,7 @@ function CartItems(props) {
        
       </div>
 
-    </Modal>
+    </Modal >
   )
 }
 

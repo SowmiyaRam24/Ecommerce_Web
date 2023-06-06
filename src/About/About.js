@@ -2,12 +2,13 @@ import React from 'react';
 import classes from './About.module.css';
 import Brand from './Band Members -2.png';
 import Navbar1 from '../Navbar/Navbar';
+import FooterStore from '../Home/FooterStore';
 
 function About() {
   return (
     <div className={classes.header}>
         <Navbar1/>
-    <div style={{paddingTop:'3px'}}>
+    <div style={{paddingTop:'60px'}}>
     <div  className={classes.headerforabout}>
      <h1>The Generics</h1> 
     </div>
@@ -28,9 +29,9 @@ Lorem ipsum dolor, sit amet consectetur rebates. The distinction, that arise fro
 For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and deliver innovative solutions that protect communities, wildlife, and the places in which they live.
 </blockquote>
         </div>
-        {/* <div>
-            <Footer/>
-        </div> */}
+        <div>
+            <FooterStore/>
+        </div>
     </div>
   )
 }

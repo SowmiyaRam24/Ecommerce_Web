@@ -1,0 +1,23 @@
+.footer1 {
+    background-color: rgb(116, 196, 241);
+  
+  display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .h1 {
+    color: aliceblue;
+    display: inline-block;
+    margin-left:140px;
+    font-size:60px;
+  }
+  
+  .img {
+    margin-left: 140px;
+  }
+  .img img {
+    margin-left: 70px;
+  }

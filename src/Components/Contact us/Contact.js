@@ -1,6 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel"; // Import FloatingLabel
+import HeaderExpense from "../Cart/HeaderExpense";
+import FooterStore from "../../Home/FooterStore";
 
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
@@ -37,6 +39,10 @@ const Contact = () => {
   return (
     <>
       <Navbar1 />
+      <div style={{paddingTop:'60px'}}>
+
+      <HeaderExpense/>
+      </div>
       <Card style={{ width: "50rem" }} className="shadow-lg mx-auto mt-3">
         <Card.Title className="mx-auto mt-3 text-center">CONTACT US</Card.Title>
         <Form className=" mx-auto mt-3" onSubmit={handleFormSubmit}>
@@ -87,6 +93,10 @@ const Contact = () => {
           </Button>
         </Form>
       </Card>
+      <div style={{paddingTop:'4%'}}>
+
+      <FooterStore/>
+      </div>
     </>
   );
 };
