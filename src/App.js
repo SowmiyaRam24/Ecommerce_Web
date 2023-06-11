@@ -24,14 +24,14 @@ function App(){
     return(
       <Layout>
         <Routes>
-        <Route path="/login" exact  element={<AuthForm/>}/>
-         <Route path="/home"   element={ authCtx.isLoggedIn?<Home/>:<Navigate to="/login"/>}/>
-         <Route path="/store"  element={authCtx.isLoggedIn?<Store/>:<Navigate to="/login"/>}/>
-         <Route path="/about" element={authCtx.isLoggedIn?<About/>:<Navigate to="/login"/>}/>
-        <Route path ="/contact" element={authCtx.isLoggedIn?<Contact/>:<Navigate to="/login"/>}/>
-        <Route path="/product/:id" element={authCtx.isLoggedIn ? <ProductPage/> : <Navigate to="/login" />} />
+        <Route path="/" exact  element={<AuthForm/>}/>
+         <Route path="/home"   element={ authCtx.isLoggedIn?<Home/>:<Navigate to="/"/>}/>
+         <Route path="/store"  element={authCtx.isLoggedIn?<Store/>:<Navigate to="/"/>}/>
+         <Route path="/about" element={authCtx.isLoggedIn?<About/>:<Navigate to="/"/>}/>
+        <Route path ="/contact" element={authCtx.isLoggedIn?<Contact/>:<Navigate to="/"/>}/>
+        <Route path="/product/:id" element={authCtx.isLoggedIn ? <ProductPage/> : <Navigate to="/" />} />
           <Route path="*" element=
-        {<Navigate to='/login'/>}/>
+        {<Navigate to='/'/>}/>
           
         </Routes>
       </Layout> 

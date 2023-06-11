@@ -20,7 +20,7 @@ const Navbar1 = (props) => {
    <Navbar bg="dark" variant="dark" fixed="top" >
       <Container>
         <Nav className="me-auto">
-         {!isLoggedIn&& <NavLink to="/login" className="nav-link">LOGIN</NavLink>}
+         {!isLoggedIn&& <NavLink to="/" className="nav-link">LOGIN</NavLink>}
           {isLoggedIn&&<NavLink to="/home" className="nav-link">
             HOME
           </NavLink>}
