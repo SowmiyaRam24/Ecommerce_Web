@@ -40,6 +40,7 @@ const AuthForm = () => {
       setIsLoading(false)
         if(res.ok){
           return res.json();
+         
         }else{
            return res.json().then(data=>{
                 let errorMessage='Authentication failed!';
@@ -54,8 +55,8 @@ const AuthForm = () => {
     }).then(data=>{
       authCtx.login(data.idToken);
       navigate("/home");
-      enteredEmail='';
-      enteredPassword='';
+      emailRef.current.value=" ";
+      passwordRef.current.value=" ";
     })
     .catch(err =>{
       alert(err.message);

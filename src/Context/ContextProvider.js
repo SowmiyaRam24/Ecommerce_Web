@@ -2,10 +2,10 @@ import { useState } from "react";
 import CartContext from "./Context";
 const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
-  const addItemToCartHandler = (item, index) => {
+  const addItemToCartHandler = (item) => {
     console.log(item);
     let isPresent = false;
-    cart.forEach((product) => {
+    cart.map((product) => {
       if (item.title === product.title) {
         isPresent = true;
       }

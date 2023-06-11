@@ -41,7 +41,8 @@ function ProductToScreen() {
                   type="submit"
                   value="ADD TO CART"
                   size="sm"
-                  onClick={() => cartcxt.addItem({...product,amount:1,id:Math.random().toString(36)})}
+                  onClick={() => cartcxt.addItem({...product,amount:1,id:Math.random().toString(36)})}//in this we given the initial cart amounts..
+                  
                 />
               </span>
             </Card.Body>

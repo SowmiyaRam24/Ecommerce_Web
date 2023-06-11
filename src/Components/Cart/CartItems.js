@@ -7,7 +7,7 @@ import CartHeader from "./cartheader";
 import CartContext from '../../Context/Context';
 
 function CartItems(props) {
-  const [purches,purchaseing]=useState(" ");
+  const [purches,purchaseing]=useState(" ");//for alert purchaseing
   const cartctx = useContext(CartContext);
   const [price, setPrice] = useState(0);
   const priceHandler = () => {
@@ -32,7 +32,7 @@ function CartItems(props) {
          {/* <button onClick={props.onHide}>x</button>  */}
 
         <div>
-        <div style={{ margin: "1px 1px 1rem   34rem" }}>
+        <div style={{ margin: "1px 1px 1rem 34rem" }}>
         {" "}
         <Button
           onClick={props.onHide}
